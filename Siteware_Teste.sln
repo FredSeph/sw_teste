@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siteware_Teste", "Siteware_Teste\Siteware_Teste.csproj", "{D3CA28A1-928B-4856-A73B-FBD4CC5E1F74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWWeb", "SWWeb\SWWeb.csproj", "{D3CA28A1-928B-4856-A73B-FBD4CC5E1F74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

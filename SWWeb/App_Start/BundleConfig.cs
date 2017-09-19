@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Siteware_Teste
+namespace SWWeb
 {
     public class BundleConfig
     {
