@@ -205,8 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SWDomain\SWDomain.csproj">
-      <Project>{1b6acf71-b9ae-4893-acd6-1af71f41b334}</Project>
+      <Project>{1ada4f37-c173-4269-8f13-44c0e38096f9}</Project>
       <Name>SWDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWRepository\SWRepository.csproj">
+      <Project>{d4688028-6788-425c-bc13-7d19fcc7b9a7}</Project>
+      <Name>SWRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
