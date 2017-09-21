@@ -3,14 +3,24 @@ using SWDomain.Model;
 using SWDomain.Model.Base;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SWRepository.Data
 {
-    class RepositoryBase<T> : IRepositoryBase<T> where T : IEntity
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : IEntity
     {
+        //protected SWModel Db;
+        //protected DbSet<T> DbSet;
+
+        //protected RepositoryBase(SWModel context)
+        //{
+        //    Db = context;
+        //    DbSet = Db.Set<T>();
+        //}
+
         public int Add(T obj)
         {
             throw new NotImplementedException();
@@ -18,12 +28,13 @@ namespace SWRepository.Data
 
         public IEnumerable<T> GetByFields(object parameters)
         {
-            using (var model = new SWModel())
-            {
-                var result = new List<T>();
-                //var result = model./* preciso do T aqui */.Where(/* parameters em lambda expression */).ToList();
-                return result;
-            }
+            throw new NotImplementedException();
+
+            //using (var model = new SWModel())
+            //{
+            //    //var result = model./* preciso do T aqui */.Where(/* parameters em lambda expression */).ToList();
+            //    return result;
+            //}
         }
 
         public IEnumerable<T> GetAll(object parameters)
