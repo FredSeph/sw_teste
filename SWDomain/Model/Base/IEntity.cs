@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SWDomain
+namespace SWDomain.Model.Base
 {
-    public class Class1
+    public interface IEntity
     {
+        string EntityName { get; }
     }
 }

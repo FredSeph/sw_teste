@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SWRepository
+namespace SWDomain.Interfaces.Business
 {
-    public class Class1
+    class IItemBusiness
     {
     }
 }

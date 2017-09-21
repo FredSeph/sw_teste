@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWDomain", "SWDomain\SWDoma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWRepository", "SWRepository\SWRepository.csproj", "{D4688028-6788-425C-BC13-7D19FCC7B9A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWBusiness", "SWBusiness\SWBusiness.csproj", "{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D4688028-6788-425C-BC13-7D19FCC7B9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4688028-6788-425C-BC13-7D19FCC7B9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4688028-6788-425C-BC13-7D19FCC7B9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
