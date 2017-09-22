@@ -1,4 +1,4 @@
-﻿using SWDomain.Model.Base;
+﻿using SWDomain.Entities.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +9,10 @@ namespace SWDomain.Interfaces.Business
 {
     public interface IBusinessBase<T> where T : IEntity
     {
+        int Add(T obj);
+        IEnumerable<T> GetAll(bool orderByName = false);
+        void Update(T obj);
+        void Remove(T obj);
+        void RemoveById(object parameters);
     }
 }

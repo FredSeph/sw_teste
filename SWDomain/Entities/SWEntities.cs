@@ -1,18 +1,18 @@
-namespace SWDomain.Model
+namespace SWDomain.Entities
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class SWModel : DbContext
+    public partial class SWEntities : DbContext
     {
-        public SWModel()
+        public SWEntities()
             : base("name=SWModel")
         {
         }
 
-        public virtual DbSet<Item> TItem { get; set; }
+        public virtual DbSet<Item> Item { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

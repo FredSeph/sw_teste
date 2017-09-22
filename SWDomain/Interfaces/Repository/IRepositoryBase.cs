@@ -1,4 +1,4 @@
-﻿using SWDomain.Model.Base;
+﻿using SWDomain.Entities.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +10,7 @@ namespace SWDomain.Interfaces.Repository
     public interface IRepositoryBase<T> where T : IEntity
     {
         int Add(T obj);
-        IEnumerable<T> GetByFields(object parameters);
-        IEnumerable<T> GetAll(object parameters);
+        IEnumerable<T> GetAll(bool orderByName = false);
         void Update(T obj);
         void Remove(T obj);
         void RemoveById(object parameters);

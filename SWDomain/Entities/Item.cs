@@ -1,6 +1,6 @@
-namespace SWDomain.Model
+namespace SWDomain.Entities
 {
-    using SWDomain.Model.Base;
+    using SWDomain.Entities.Base;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

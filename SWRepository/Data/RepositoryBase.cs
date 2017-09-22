@@ -1,6 +1,6 @@
 ﻿using SWDomain.Interfaces.Repository;
-using SWDomain.Model;
-using SWDomain.Model.Base;
+using SWDomain.Entities;
+using SWDomain.Entities.Base;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,6 +12,8 @@ namespace SWRepository.Data
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : IEntity
     {
+        #region Properties and Constructors
+
         //protected SWModel Db;
         //protected DbSet<T> DbSet;
 
@@ -21,23 +23,19 @@ namespace SWRepository.Data
         //    DbSet = Db.Set<T>();
         //}
 
+        #endregion
+
         public int Add(T obj)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> GetByFields(object parameters)
+        public IEnumerable<T> GetAll(bool orderByName = false)
         {
             throw new NotImplementedException();
-
-            //using (var model = new SWModel())
-            //{
-            //    //var result = model./* preciso do T aqui */.Where(/* parameters em lambda expression */).ToList();
-            //    return result;
-            //}
         }
 
-        public IEnumerable<T> GetAll(object parameters)
+        public void Update(T obj)
         {
             throw new NotImplementedException();
         }
@@ -48,11 +46,6 @@ namespace SWRepository.Data
         }
 
         public void RemoveById(object parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(T obj)
         {
             throw new NotImplementedException();
         }

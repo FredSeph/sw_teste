@@ -50,13 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\Business\IBusinessBase.cs" />
-    <Compile Include="Model\Base\EntityBase.cs" />
-    <Compile Include="Model\Base\IEntity.cs" />
+    <Compile Include="Entities\Base\EntityBase.cs" />
+    <Compile Include="Entities\Base\IEntity.cs" />
     <Compile Include="Interfaces\Business\IItemBusiness.cs" />
     <Compile Include="Interfaces\Repository\IItemRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepositoryBase.cs" />
-    <Compile Include="Model\SWModel.cs" />
-    <Compile Include="Model\Item.cs" />
+    <Compile Include="Entities\SWEntities.cs" />
+    <Compile Include="Entities\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
