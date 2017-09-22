@@ -8,7 +8,7 @@ namespace SWDomain.Entities
     public partial class SWEntities : DbContext
     {
         public SWEntities()
-            : base("name=SWModel")
+            : base("name=SWEntities")
         {
         }
 

@@ -2,6 +2,7 @@
 using SWDomain.Interfaces.Repository;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,8 +39,7 @@ namespace SWRepository.Data
         {
             using (var db = new SWEntities())
             {
-                var original = db.Item.Find(item.Id);
-                original = item;
+                db.Entry(item).State = EntityState.Modified;
                 db.SaveChanges();
             }
         }

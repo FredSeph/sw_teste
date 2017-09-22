@@ -14,10 +14,10 @@ namespace SWRepository.Data
     {
         #region Properties and Constructors
 
-        //protected SWModel Db;
+        //protected SWEntities Db;
         //protected DbSet<T> DbSet;
 
-        //protected RepositoryBase(SWModel context)
+        //protected RepositoryBase(SWEntities context)
         //{
         //    Db = context;
         //    DbSet = Db.Set<T>();
