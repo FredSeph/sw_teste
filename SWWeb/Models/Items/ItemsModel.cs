@@ -15,6 +15,6 @@ namespace SWWeb.Models.Items
         }
 
         public IEnumerable<Item> Items { get; set; }
-        public Dictionary<Promotion, string> Promotions { get; set; }
+        public Dictionary<short, string> Promotions { get; set; }
     }
 }

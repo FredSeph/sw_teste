@@ -11,7 +11,7 @@
         <h4>Lista de Produtos</h4>
     </div>
     <div class="col-md-6 text-right">
-        <a class="btn btn-primary" href="#" title="Adicionar" data-toggle="modal" data-target="#AddEditModal"><i class="glyphicon glyphicon-plus"></i> Adicionar</a>
+        <a class="btn btn-primary" id="AddButton" href="#" title="Adicionar" data-toggle="modal" data-target="#AddEditModal"><i class="glyphicon glyphicon-plus"></i> Adicionar</a>
     </div>
 </div>
 
@@ -29,8 +29,8 @@
             <td>R$ @item.Price.ToString("0.00")</td>
             <td>
                 <div class="btn-group-sm">
-                    <a class="btn" href="#" title="Editar" data-toggle="modal" data-target="#AddEditModal" data-itemid="@item.Id"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a class="btn" href="#" title="Deletar" data-toggle="modal" data-target="#DeleteModal" data-itemid="@item.Id"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a class="btn" id="EditButton" href="#" title="Editar" data-toggle="modal" data-target="#AddEditModal" data-itemid="@item.Id"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a class="btn" href="#" title="Deletar" data-toggle="modal" data-target="#DeleteModal" data-itemid="@item.Id" data-itemname="@item.Name" data-itemprice="@item.Price" data-itempromotion="@item.Promotion"><i class="glyphicon glyphicon-trash"></i></a>
                 </div>
             </td>
         </tr>
@@ -39,7 +39,7 @@
 </table>
 
 <!-- Modal Add / Edit -->
-<div class="modal fade" id="AddEditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddEditModal" tabindex="-1" role="dialog" aria-labelledby="AddEditModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -83,7 +83,7 @@
 </div>
 
 <!-- Modal Delete -->
-<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 

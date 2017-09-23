@@ -11,13 +11,13 @@ namespace SWBusiness
 {
     public class PromotionBusiness : IPromotionBusiness
     {
-        public Dictionary<Promotion, string> GetPromotionSelectList()
+        public Dictionary<short, string> GetPromotionSelectList()
         {
-            var promotions = new Dictionary<Promotion, string>();
+            var promotions = new Dictionary<short, string>();
 
-            promotions.Add(Promotion.None, "");
-            promotions.Add(Promotion.BuyOneGetOneFree, "Pague 1 e Leve 2");
-            promotions.Add(Promotion.ThreeFor10, "3 por R$ 10,00");
+            promotions.Add((short)Promotion.None, "");
+            promotions.Add((short)Promotion.BuyOneGetOneFree, "Pague 1 e Leve 2");
+            promotions.Add((short)Promotion.ThreeFor10, "3 por R$ 10,00");
 
             return promotions;
         }

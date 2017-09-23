@@ -14,6 +14,14 @@
         {
             <div class="col-md-4" style="border:thin solid rgba(227, 25, 51, 0.4); border-radius:15px; padding:15px;">
                 <h4>@item.Name</h4>
+                @if (item.Promotion != 0 && item.Promotion != null)
+                {
+                    <p class="alert-danger" style="font-size:10pt">Produto em promoção!</p>
+                }
+                else
+                {
+                    <p style="font-size:10pt">-</p> <!-- Isso só para todos os boxes de produto ficarem do mesmo tamanho -->
+                }
                 <h3 style="color:#E31933;">R$ @item.Price.ToString("0.00")</h3>
                 <div class="row">
                     <div class="col-sm-6">

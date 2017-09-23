@@ -1,4 +1,5 @@
-﻿using SWDomain.Interfaces.Business;
+﻿using SWDomain.Entities;
+using SWDomain.Interfaces.Business;
 using SWWeb.Models.Items;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,22 @@ namespace SWWeb.Controllers
             model.Promotions = _promotionBusiness.GetPromotionSelectList();
 
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Item item)
+        {
+            _itemBusiness.Add(item);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPut]
+        public ActionResult Edit(Item item)
+        {
+            _itemBusiness.Update(item);
+
+            return RedirectToAction("Index");
         }
     }
 }
