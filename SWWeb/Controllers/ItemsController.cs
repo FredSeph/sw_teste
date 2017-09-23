@@ -44,8 +44,8 @@ namespace SWWeb.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPut]
-        public ActionResult Edit(Item item)
+        [HttpPost]
+        public ActionResult Update(Item item)
         {
             _itemBusiness.Update(item);
 
