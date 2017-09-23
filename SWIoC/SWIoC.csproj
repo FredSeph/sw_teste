@@ -71,10 +71,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Injector.cs" />
+    <Compile Include="IoCInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SWBusiness\SWBusiness.csproj">
+      <Project>{ca2a2bcf-c645-40b7-b8cf-b12c86eae161}</Project>
+      <Name>SWBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWDomain\SWDomain.csproj">
+      <Project>{1ada4f37-c173-4269-8f13-44c0e38096f9}</Project>
+      <Name>SWDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWRepository\SWRepository.csproj">
+      <Project>{d4688028-6788-425c-bc13-7d19fcc7b9a7}</Project>
+      <Name>SWRepository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

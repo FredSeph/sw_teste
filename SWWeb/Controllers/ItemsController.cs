@@ -13,10 +13,13 @@ namespace SWWeb.Controllers
         #region Properties and Constructors
 
         private readonly IItemBusiness _itemBusiness;
+        private readonly IPromotionBusiness _promotionBusiness;
 
-        public ItemsController(IItemBusiness itemBusiness)
+        public ItemsController(IItemBusiness itemBusiness,
+                               IPromotionBusiness promotionBusiness)
         {
             _itemBusiness = itemBusiness;
+            _promotionBusiness = promotionBusiness;
         }
 
         #endregion
@@ -24,9 +27,10 @@ namespace SWWeb.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var model = new IndexModel();
+            var model = new ItemsModel();
 
             model.Items = _itemBusiness.GetAll(true);
+            model.Promotions = _promotionBusiness.GetPromotionSelectList();
 
             return View(model);
         }

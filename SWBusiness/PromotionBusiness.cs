@@ -11,6 +11,17 @@ namespace SWBusiness
 {
     public class PromotionBusiness : IPromotionBusiness
     {
+        public Dictionary<Promotion, string> GetPromotionSelectList()
+        {
+            var promotions = new Dictionary<Promotion, string>();
+
+            promotions.Add(Promotion.None, "");
+            promotions.Add(Promotion.BuyOneGetOneFree, "Pague 1 e Leve 2");
+            promotions.Add(Promotion.ThreeFor10, "3 por R$ 10,00");
+
+            return promotions;
+        }
+
         public decimal ApplyPromotion(DTOCartItem cartItem)
         {
             switch((Promotion)cartItem.Item.Promotion)

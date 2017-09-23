@@ -162,7 +162,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Items\IndexModel.cs" />
+    <Compile Include="Models\Home\HomeModel.cs" />
+    <Compile Include="Models\Items\ItemsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +230,10 @@
     <ProjectReference Include="..\SWDomain\SWDomain.csproj">
       <Project>{1ada4f37-c173-4269-8f13-44c0e38096f9}</Project>
       <Name>SWDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SWIoC\SWIoC.csproj">
+      <Project>{a64b0929-21e6-43e4-8aef-111fb0b8e2d8}</Project>
+      <Name>SWIoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\SWRepository\SWRepository.csproj">
       <Project>{d4688028-6788-425c-bc13-7d19fcc7b9a7}</Project>
