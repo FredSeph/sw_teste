@@ -49,10 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransferObjects\DTOCartItem.cs" />
+    <Compile Include="Enum\Promotion.cs" />
     <Compile Include="Interfaces\Business\IBusinessBase.cs" />
     <Compile Include="Entities\Base\EntityBase.cs" />
     <Compile Include="Entities\Base\IEntity.cs" />
+    <Compile Include="Interfaces\Business\ICheckoutBusiness.cs" />
     <Compile Include="Interfaces\Business\IItemBusiness.cs" />
+    <Compile Include="Interfaces\Business\IPromotionBusiness.cs" />
     <Compile Include="Interfaces\Repository\IItemRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepositoryBase.cs" />
     <Compile Include="Entities\SWEntities.cs" />

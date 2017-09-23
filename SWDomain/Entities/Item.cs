@@ -19,6 +19,8 @@ namespace SWDomain.Entities
         public string Name { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
+
+        public short? Promotion { get; set; }
     }
 }
