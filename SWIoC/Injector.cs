@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SWWeb.Utils
+namespace SWIoC
 {
     public static class Injector
     {

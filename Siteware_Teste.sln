@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWRepository", "SWRepositor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWBusiness", "SWBusiness\SWBusiness.csproj", "{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWIoC", "SWIoC\SWIoC.csproj", "{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA2A2BCF-C645-40B7-B8CF-B12C86EAE161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

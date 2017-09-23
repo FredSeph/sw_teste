@@ -21,16 +21,16 @@ namespace SWWeb
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            InitializeContainer();
+            //InitializeContainer();
         }
 
-        private void InitializeContainer()
-        {
-            var container = new Container();
+        //private void InitializeContainer()
+        //{
+        //    var container = new Container();
 
-            container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
+        //    container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
-            container.Verify();
-        }
+        //    container.Verify();
+        //}
     }
 }
