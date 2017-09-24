@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SWDomain.DataTransferObjects;
+using SWDomain.Interfaces.Business;
+using SWWeb.Models.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +11,85 @@ namespace SWWeb.Controllers
 {
     public class HomeController : Controller
     {
+        #region Properties and Constructors
+
+        private readonly IItemBusiness _itemBusiness;
+        private readonly IShoppingBusiness _shoppingBusiness;
+
+        public HomeController(IItemBusiness itemBusiness,
+                              IShoppingBusiness shoppingBusiness)
+        {
+            _itemBusiness = itemBusiness;
+            _shoppingBusiness = shoppingBusiness;
+        }
+
+        #endregion
+
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var model = new HomeModel();
+
+            Session["Cart"] = Session["Cart"] ?? new List<DTOCartItem>();
+
+            model.Items = _itemBusiness.GetAll().OrderBy(i => i.Name);
+
+            return View(model);
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public JsonResult LoadCart()
         {
-            ViewBag.Message = "Your application description page.";
+            var currentCart = Session["Cart"] as List<DTOCartItem>;
 
-            return View();
+            var result = GetCart(currentCart);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Contact()
+        [HttpGet]
+        public JsonResult AddItemToCart(int id, int count)
         {
-            ViewBag.Message = "Your contact page.";
+            var item = _itemBusiness.GetById(id);
 
-            return View();
+            var currentCart = Session["Cart"] as List<DTOCartItem>;
+
+            if (currentCart.Any(i => i.Item.Id == item.Id))
+            {
+                currentCart.FirstOrDefault(i => i.Item.Id == item.Id).Count += count;
+            }
+            else
+            {
+                var newCartItem = new DTOCartItem() { Item = item, Count = count };
+                currentCart.Add(newCartItem);
+            }
+
+            Session["Cart"] = currentCart;
+
+            var result = GetCart(currentCart);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpGet]
+        public JsonResult Checkout()
+        {
+            var currentCart = new List<DTOCartItem>();
+
+            Session["Cart"] = currentCart;
+
+            var result = GetCart(currentCart);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        #region Private Methods
+
+        private object GetCart(List<DTOCartItem> currentCart)
+        {
+            return new { CartHtml = _shoppingBusiness.BuildCartHtml(currentCart), Count = _shoppingBusiness.CountItems(currentCart) };
+        }
+
+        #endregion
     }
 }
