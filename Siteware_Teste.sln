@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWBusiness", "SWBusiness\SW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWIoC", "SWIoC\SWIoC.csproj", "{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SWUnitTest", "SWUnitTest\SWUnitTest.csproj", "{5A31380C-256A-4ED2-81AE-6E5DC3AEE1EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A64B0929-21E6-43E4-8AEF-111FB0B8E2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A31380C-256A-4ED2-81AE-6E5DC3AEE1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A31380C-256A-4ED2-81AE-6E5DC3AEE1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A31380C-256A-4ED2-81AE-6E5DC3AEE1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A31380C-256A-4ED2-81AE-6E5DC3AEE1EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
