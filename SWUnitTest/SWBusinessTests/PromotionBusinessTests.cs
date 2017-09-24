@@ -4,7 +4,7 @@ using SWDomain.Entities;
 using System;
 using Xunit;
 
-namespace SWUnitTest
+namespace SWUnitTest.SWBusinessTests
 {
     public class PromotionBusinessTests
     {
