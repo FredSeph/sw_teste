@@ -54,7 +54,7 @@
     <Compile Include="Interfaces\Business\IBusinessBase.cs" />
     <Compile Include="Entities\Base\EntityBase.cs" />
     <Compile Include="Entities\Base\IEntity.cs" />
-    <Compile Include="Interfaces\Business\ICheckoutBusiness.cs" />
+    <Compile Include="Interfaces\Business\IShoppingBusiness.cs" />
     <Compile Include="Interfaces\Business\IItemBusiness.cs" />
     <Compile Include="Interfaces\Business\IPromotionBusiness.cs" />
     <Compile Include="Interfaces\Repository\IItemRepository.cs" />

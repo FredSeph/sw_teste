@@ -10,6 +10,7 @@ namespace SWDomain.Interfaces.Business
 {
     public interface IPromotionBusiness
     {
+        string GetPromotionName(Promotion promotion);
         Dictionary<short, string> GetPromotionSelectList();
         decimal ApplyPromotion(DTOCartItem cartItem);
     }

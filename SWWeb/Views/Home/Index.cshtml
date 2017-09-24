@@ -7,8 +7,7 @@
 }
 
 <div class="jumbotron" style="margin-top:25px;">
-    <h2>Saldão!</h2>
-    <p class="lead">Aproveite as promoções imperdíveis!</p>
+    <p class="lead">Vários produtos com promoções imperdíveis!</p>
     <div class="container">
         @foreach (var item in Model.Items)
         {
@@ -16,22 +15,51 @@
                 <h4>@item.Name</h4>
                 @if (item.Promotion != 0 && item.Promotion != null)
                 {
-                    <p class="alert-danger" style="font-size:10pt">Produto em promoção!</p>
+                    <div class="alert-danger" style="font-size:10pt; padding: 0 10px 0 10px;">Produto em promoção!</div>
                 }
                 else
                 {
-                    <p style="font-size:10pt">-</p> <!-- Isso só para todos os boxes de produto ficarem do mesmo tamanho -->
+                    <p style="font-size:10pt">-</p>
                 }
                 <h3 style="color:#E31933;">R$ @item.Price.ToString("0.00")</h3>
                 <div class="row">
                     <div class="col-sm-6">
-                        <input class="form-control" type="number" min="1" value="1" style="margin-top:7px;" />
+                        <input class="form-control" type="number" name="count-@item.Id" id="count-@item.Id" min="1" value="1" style="margin-top:7px;" />
                     </div>
                     <div class="col-sm-6">
-                        <a class="btn btn-primary"><i class="glyphicon glyphicon-shopping-cart"> Comprar</i></a>
+                        <a class="btn btn-primary addToCartButton" data-itemid="@item.Id"><i class="glyphicon glyphicon-shopping-cart"> Comprar</i></a>
                     </div>
-                </div>                
+                </div>
             </div>
         }
     </div>
 </div>
+
+<!-- Modal Shopping Cart -->
+<div class="modal fade" id="ShoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="ShoppingCartModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title"><i class="glyphicon glyphicon-shopping-cart"> Checkout</i></h4>
+            </div>
+
+            <div class="modal-body">
+                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Continuar comprando</button>
+                <button type="button" class="btn btn-primary" id="ItemSave">Finalizar compra</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/Views/Items/Home_Index.js"></script>
+}
