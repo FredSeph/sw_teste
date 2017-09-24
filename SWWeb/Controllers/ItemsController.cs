@@ -30,14 +30,14 @@ namespace SWWeb.Controllers
         {
             var model = new ItemsModel();
 
-            model.Items = _itemBusiness.GetAll(true);
+            model.Items = _itemBusiness.GetAll().OrderBy(i => i.Name);
             model.Promotions = _promotionBusiness.GetPromotionSelectList();
 
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(Item item)
+        public ActionResult Add(Item item)
         {
             _itemBusiness.Add(item);
 
@@ -48,6 +48,14 @@ namespace SWWeb.Controllers
         public ActionResult Update(Item item)
         {
             _itemBusiness.Update(item);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Remove(int id)
+        {
+            _itemBusiness.RemoveById(id);
 
             return RedirectToAction("Index");
         }

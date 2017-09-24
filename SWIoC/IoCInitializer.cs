@@ -1,4 +1,5 @@
 ﻿using SimpleInjector;
+using SWDomain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,8 @@ namespace SWIoC
 
             Register(interfacesBusiness, typesBusiness, container, lifestyle);
             Register(interfacesRepository, typesRepository, container, lifestyle);
+
+            container.Register<SWEntities>(lifestyle);
         }
 
         #region Private Methods

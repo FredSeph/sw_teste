@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace SWDomain.Interfaces.Business
 {
-    public interface IBusinessBase<T> where T : IEntity
+    public interface IBusinessBase<T> where T : class, IEntity
     {
         int Add(T obj);
-        IEnumerable<T> GetAll(bool orderByName = false);
+        IEnumerable<T> GetAll();
+        T GetById(object id);
         void Update(T obj);
         void Remove(T obj);
         void RemoveById(object parameters);

@@ -26,23 +26,16 @@ namespace SWWeb.Controllers
         {
             var model = new HomeModel();
 
-            model.Items = _itemBusiness.GetAll(true);
+            model.Items = _itemBusiness.GetAll().OrderBy(i => i.Name);
 
             return View(model);
         }
 
-        //public ActionResult About()
-        //{
-        //    ViewBag.Message = "Your application description page.";
+        public ActionResult Checkout()
+        {
+            ViewBag.Message = "Your application description page.";
 
-        //    return View();
-        //}
-
-        //public ActionResult Contact()
-        //{
-        //    ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
+            return View();
+        }
     }
 }

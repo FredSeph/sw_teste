@@ -15,7 +15,6 @@ namespace SWDomain.Entities.Base
             _entityName = entityName;
         }
 
-        // //////
         public string EntityName
         {
             get

@@ -22,35 +22,5 @@ namespace SWBusiness
         }
 
         #endregion
-
-        // Add temporário até o fluxo do BusinessBase > RepositoryBase funcionar
-        public new int Add(Item item)
-        {
-            return _itemRepository.Add(item);
-        }
-
-        // GetAll temporário até o fluxo do BusinessBase > RepositoryBase funcionar
-        public new IEnumerable<Item> GetAll(bool orderByName = false)
-        {
-            return _itemRepository.GetAll(orderByName);
-        }
-
-        // Update temporário até o fluxo do BusinessBase > RepositoryBase funcionar
-        public new void Update(Item item)
-        {
-            _itemRepository.Update(item);
-        }
-
-        // Remove temporário até o fluxo do BusinessBase > RepositoryBase funcionar
-        public new void Remove(Item item)
-        {
-            _itemRepository.Remove(item);
-        }
-
-        // RemoveById temporário até o fluxo do BusinessBase > RepositoryBase funcionar
-        public new void RemoveById(object parameters)
-        {
-            _itemRepository.RemoveById(parameters);
-        }
     }
 }

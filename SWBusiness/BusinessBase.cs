@@ -9,42 +9,47 @@ using SWDomain.Interfaces.Repository;
 
 namespace SWBusiness
 {
-    public class BusinessBase<T> : IBusinessBase<T> where T : IEntity
+    public abstract class BusinessBase<T> : IBusinessBase<T> where T : class, IEntity
     {
         #region Properties and Constructors
 
-        private readonly IRepositoryBase<T> _repositoryBase;
+        private readonly IRepositoryBase<T> _repository;
 
         public BusinessBase(IRepositoryBase<T> repositoryBase)
         {
-            _repositoryBase = repositoryBase;
+            _repository = repositoryBase;
         }
 
         #endregion
 
         public int Add(T obj)
         {
-            return _repositoryBase.Add(obj);
+            return _repository.Add(obj);
         }
 
-        public IEnumerable<T> GetAll(bool orderByName = false)
+        public IEnumerable<T> GetAll()
         {
-            return _repositoryBase.GetAll(orderByName);
+            return _repository.GetAll();
+        }
+
+        public T GetById(object id)
+        {
+            return _repository.GetById(id);
         }
 
         public void Update(T obj)
         {
-            _repositoryBase.Update(obj);
+            _repository.Update(obj);
         }
 
         public void Remove(T obj)
         {
-            _repositoryBase.Remove(obj);
+            _repository.Remove(obj);
         }
 
         public void RemoveById(object parameters)
         {
-            _repositoryBase.RemoveById(parameters);
+            _repository.RemoveById(parameters);
         }
     }
 }

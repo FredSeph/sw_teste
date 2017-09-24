@@ -11,7 +11,7 @@
         <h4>Lista de Produtos</h4>
     </div>
     <div class="col-md-6 text-right">
-        <a class="btn btn-primary" id="AddButton" href="#" title="Adicionar" data-toggle="modal" data-target="#AddEditModal"><i class="glyphicon glyphicon-plus"></i> Adicionar</a>
+        <a class="btn btn-primary" id="AddButton" href="#" title="Adicionar" data-toggle="modal" data-target="#AddUpdateModal"><i class="glyphicon glyphicon-plus"></i> Adicionar</a>
     </div>
 </div>
 
@@ -29,8 +29,8 @@
             <td>R$ @item.Price.ToString("0.00")</td>
             <td>
                 <div class="btn-group-sm">
-                    <a class="btn editButton" href="#" title="Editar" data-toggle="modal" data-target="#AddEditModal" data-itemid="@item.Id" data-itemname="@item.Name" data-itemprice="@item.Price.ToString("0.00")" data-itempromotion="@item.Promotion"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a class="btn"href="#" title="Deletar" data-toggle="modal" data-target="#DeleteModal" data-itemid="@item.Id"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a class="btn editButton" href="#" title="Editar" data-toggle="modal" data-target="#AddUpdateModal" data-itemid="@item.Id" data-itemname="@item.Name" data-itemprice="@item.Price.ToString("0.00")" data-itempromotion="@item.Promotion"><i class="glyphicon glyphicon-edit"></i></a>
+                    <a class="btn removeButton" href="#" title="Deletar" data-toggle="modal" data-target="#RemoveModal" data-itemid="@item.Id" data-itemname="@item.Name"><i class="glyphicon glyphicon-trash"></i></a>
                 </div>
             </td>
         </tr>
@@ -39,7 +39,7 @@
 </table>
 
 <!-- Modal Add / Edit -->
-<div class="modal fade" id="AddEditModal" tabindex="-1" role="dialog" aria-labelledby="AddEditModal" aria-hidden="true">
+<div class="modal fade" id="AddUpdateModal" tabindex="-1" role="dialog" aria-labelledby="AddUpdateModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -48,11 +48,11 @@
                     <span aria-hidden="true">&times;</span>
                     <span class="sr-only">Close</span>
                 </button>
-                <h4 class="modal-title">Adicionar novo produto</h4>
+                <h4 class="modal-title"></h4>
             </div>
 
             <div class="modal-body">
-                <form role="form" id="ItemForm">
+                <form role="form" name="ItemAddUpdateForm" id="ItemAddUpdateForm" method="post">
                     <input class="form-control" type="hidden" name="Id" id="Id" />
                     <div class="form-group">
                         <label for="Name">Nome</label>
@@ -82,8 +82,8 @@
     </div>
 </div>
 
-<!-- Modal Delete -->
-<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModal" aria-hidden="true">
+<!-- Modal Remove -->
+<div class="modal fade" id="RemoveModal" tabindex="-1" role="dialog" aria-labelledby="RemoveModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -96,12 +96,15 @@
             </div>
 
             <div class="modal-body">
-                <p>Tem certeza que deseja deletar o produto <span id="deleteItemName"></span>?</p>
+                <p>Tem certeza que deseja deletar o produto <span id="ItemRemoveName"></span>?</p>
+                <form role="form" name="ItemRemoveForm" id="ItemRemoveForm" method="post" action="/Items/Remove">
+                    <input class="form-control" type="hidden" name="id" id="ItemRemoveId" />
+                </form>
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" id="ItemSave">Confirmar</button>
+                <button type="button" class="btn btn-primary" id="ItemRemoveConfirm">Confirmar</button>
             </div>
         </div>
     </div>

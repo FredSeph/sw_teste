@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace SWDomain.Interfaces.Repository
 {
-    public interface IRepositoryBase<T> where T : IEntity
+    public interface IRepositoryBase<T> where T : class, IEntity
     {
         int Add(T obj);
-        IEnumerable<T> GetAll(bool orderByName = false);
+        IEnumerable<T> GetAll();
+        T GetById(object id);
         void Update(T obj);
         void Remove(T obj);
         void RemoveById(object parameters);

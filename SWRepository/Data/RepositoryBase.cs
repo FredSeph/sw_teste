@@ -10,44 +10,53 @@ using System.Threading.Tasks;
 
 namespace SWRepository.Data
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : IEntity
+    public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class, IEntity
     {
         #region Properties and Constructors
 
-        //protected SWEntities Db;
-        //protected DbSet<T> DbSet;
+        protected SWEntities Db;
+        protected DbSet<T> DbSet;
 
-        //protected RepositoryBase(SWEntities context)
-        //{
-        //    Db = context;
-        //    DbSet = Db.Set<T>();
-        //}
+        protected RepositoryBase(SWEntities context)
+        {
+            Db = context;
+            DbSet = Db.Set<T>();
+        }
 
         #endregion
 
         public int Add(T obj)
         {
-            throw new NotImplementedException();
+            DbSet.Add(obj);
+            return Db.SaveChanges();
         }
 
-        public IEnumerable<T> GetAll(bool orderByName = false)
+        public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return DbSet.ToList();
+        }
+
+        public T GetById(object id)
+        {
+            return DbSet.Find(id);
         }
 
         public void Update(T obj)
         {
-            throw new NotImplementedException();
+            Db.Entry(obj).State = EntityState.Modified;
+            Db.SaveChanges();
         }
 
         public void Remove(T obj)
         {
-            throw new NotImplementedException();
+            DbSet.Remove(obj);
+            Db.SaveChanges();
         }
 
         public void RemoveById(object parameters)
         {
-            throw new NotImplementedException();
+            DbSet.Remove(DbSet.Find(parameters));
+            Db.SaveChanges();
         }
     }
 }
