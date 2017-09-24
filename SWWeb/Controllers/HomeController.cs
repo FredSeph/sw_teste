@@ -29,22 +29,34 @@ namespace SWWeb.Controllers
         public ActionResult Index()
         {
             var model = new HomeModel();
-            Session["Cart"] = new List<DTOCartItem>();
+
+            Session["Cart"] = Session["Cart"] ?? new List<DTOCartItem>();
 
             model.Items = _itemBusiness.GetAll().OrderBy(i => i.Name);
 
             return View(model);
         }
 
-        [HttpPost]
+        [HttpGet]
+        public JsonResult LoadCart()
+        {
+            var currentCart = Session["Cart"] as List<DTOCartItem>;
+
+            var result = GetCart(currentCart);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
         public JsonResult AddItemToCart(int id, int count)
         {
             var item = _itemBusiness.GetById(id);
+
             var currentCart = Session["Cart"] as List<DTOCartItem>;
 
-            if(currentCart.Any(i => i.Item == item))
+            if (currentCart.Any(i => i.Item.Id == item.Id))
             {
-                currentCart.FirstOrDefault(i => i.Item == item).Count += count;
+                currentCart.FirstOrDefault(i => i.Item.Id == item.Id).Count += count;
             }
             else
             {
@@ -54,7 +66,7 @@ namespace SWWeb.Controllers
 
             Session["Cart"] = currentCart;
 
-            var result = new { CartHtml = _shoppingBusiness.BuildCartHtml(currentCart), Count = _shoppingBusiness.CountItems(currentCart), TotalPrice = _shoppingBusiness.CalculateTotalPrice(currentCart) };
+            var result = GetCart(currentCart);
 
             return Json(result, JsonRequestBehavior.AllowGet);
         }
@@ -62,9 +74,22 @@ namespace SWWeb.Controllers
         [HttpGet]
         public JsonResult Checkout()
         {
-            Session["Cart"] = null;
+            var currentCart = new List<DTOCartItem>();
 
-            return Json(true, JsonRequestBehavior.AllowGet);
+            Session["Cart"] = currentCart;
+
+            var result = GetCart(currentCart);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        #region Private Methods
+
+        private object GetCart(List<DTOCartItem> currentCart)
+        {
+            return new { CartHtml = _shoppingBusiness.BuildCartHtml(currentCart), Count = _shoppingBusiness.CountItems(currentCart) };
+        }
+
+        #endregion
     }
 }

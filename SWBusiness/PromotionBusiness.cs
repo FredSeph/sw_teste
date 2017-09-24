@@ -52,14 +52,16 @@ namespace SWBusiness
 
         private decimal ApplyPromotionBuyOneGetOneFree(decimal price, int count)
         {
-            return count % 2 == 0
-                ? (price * count) / 2
-                : ((price * count) / 2) + price;
+            return count == 1
+                ? price
+                : count % 2 == 0
+                    ? (count / 2) * price
+                    : ((count / 2) * price) + price;
         }
 
         private decimal ApplyPromotionThreeFor10(decimal price, int count)
         {
-            return ((count / 3) * 10) + ((count % 3) * price); 
+            return ((count / 3) * 10) + ((count % 3) * price);
         }
 
         #endregion

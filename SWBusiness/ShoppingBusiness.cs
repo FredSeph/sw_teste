@@ -75,7 +75,7 @@ namespace SWBusiness
             }
 
             table.Append("<tr>");
-            table.Append($"<td></td><td>Total</td><td>R$ {CalculateTotalPrice(cartItems)}</td><td></td>");
+            table.Append($"<td></td><td>Total</td><td>R$ {CalculateTotalPrice(cartItems).ToString("0.00")}</td><td></td>");
             table.Append("</table>");
 
             return table.ToString();
