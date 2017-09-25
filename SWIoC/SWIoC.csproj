@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DummyReference.cs" />
     <Compile Include="IoCInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Data\ItemRepository.cs" />
     <Compile Include="Data\RepositoryBase.cs" />
+    <Compile Include="DummyReference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
