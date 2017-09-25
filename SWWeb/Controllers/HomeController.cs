@@ -71,7 +71,7 @@ namespace SWWeb.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
+        [HttpPost]
         public JsonResult Checkout()
         {
             var currentCart = new List<DTOCartItem>();

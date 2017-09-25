@@ -44,7 +44,7 @@ function AddItemToCart(id, count) {
 
 function Checkout() {
     $.ajax({
-        type: "Get",
+        type: "Post",
         url: "/Home/Checkout",
         success: function (result) {
             alert("Compra realizada com sucesso!");
